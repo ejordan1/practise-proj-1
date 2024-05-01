@@ -12,3 +12,4 @@
 /Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.pdb
 /Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.genruntimeconfig.cache
 /Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/ref/PractiseProj1.dll
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.sourcelink.json
