@@ -1,0 +1,14 @@
+/Users/emersonjordan/Desktop/PractiseProj1/bin/Debug/net8.0/PractiseProj1
+/Users/emersonjordan/Desktop/PractiseProj1/bin/Debug/net8.0/PractiseProj1.deps.json
+/Users/emersonjordan/Desktop/PractiseProj1/bin/Debug/net8.0/PractiseProj1.runtimeconfig.json
+/Users/emersonjordan/Desktop/PractiseProj1/bin/Debug/net8.0/PractiseProj1.dll
+/Users/emersonjordan/Desktop/PractiseProj1/bin/Debug/net8.0/PractiseProj1.pdb
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.AssemblyInfoInputs.cache
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.AssemblyInfo.cs
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.csproj.CoreCompileInputs.cache
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.dll
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/refint/PractiseProj1.dll
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.pdb
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/PractiseProj1.genruntimeconfig.cache
+/Users/emersonjordan/Desktop/PractiseProj1/obj/Debug/net8.0/ref/PractiseProj1.dll
