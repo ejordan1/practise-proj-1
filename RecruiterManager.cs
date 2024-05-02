@@ -1,13 +1,23 @@
+using System.Runtime.InteropServices.JavaScript;
+
 namespace PractiseProj1;
 
 public class RecruiterManager
 {
     public Dictionary<int, Recruiter> recruiters; 
     
-    public RecruiterManager(Recruiter[] newRecruiters)
+    public RecruiterManager()
     {
         this.recruiters = new Dictionary<int, Recruiter>();
+    }
 
+    public void AddRecruiters(Recruiter[] newRecruiters)
+    {
+        foreach (Recruiter newRecruiter in newRecruiters)
+        {
+            // if (recruiters.ContainsKey(newRecruiter.id)) throw new InvalidOperationException("Recruiter Id already exists");
+            recruiters.TryAdd(newRecruiter.id, newRecruiter);
+        }
     }
 
     public void CreateVacation(Recruiter[] newRecruiters)
@@ -29,10 +39,61 @@ public class RecruiterManager
 
     public void AssignCandadites(Intern[] newInterns)
     {
-        // was about to use the ConvertAll method to turn them into candadites
+        Candidate[] candidates = Array.ConvertAll(newInterns, intern => new Candidate(intern));
+        Stack<Candidate> candidateStack = new Stack<Candidate>(candidates);
+        Console.WriteLine("candidates count = " + candidateStack.Count);
+    
+        // had to change to double here, not sure why
+        double averageCandidates = Math.Ceiling((double)candidateStack.Count / recruiters.Count);
+
+        // make recruiter candidate dictionary
+        Dictionary<int, HashSet<Candidate>> recruiterCandidates = new Dictionary<int, HashSet<Candidate>>();
+        foreach (KeyValuePair<int, Recruiter> r in recruiters)
+        {
+            recruiterCandidates.Add(r.Key, new HashSet<Candidate>());
+        }
+        
+        foreach (Recruiter recruiter in recruiters.Values)
+        {
+            List<Candidate> overlapped = new List<Candidate>();
+            for (int i = 0; i < averageCandidates; i++)
+            {
+                if (candidateStack.Count > 0)
+                {
+                    bool addedCandidate = false;
+                    while (!addedCandidate && candidateStack.Count > 0)
+                    {
+                        Candidate attemptingCandidate = candidateStack.Pop();
+                        if (recruiter.CanRecruitIntern(attemptingCandidate))
+                        {
+                            // verify that recruiter doesn't already have that candidate
+                            if (!recruiterCandidates[recruiter.id].Contains(attemptingCandidate))
+                            {
+                                recruiterCandidates[recruiter.id].Add(attemptingCandidate);
+                                addedCandidate = true;
+                            }
+                        }
+                        else // candidate overlapped with vacation
+                        {
+                            attemptingCandidate.Skipped++;
+                            overlapped.Add(attemptingCandidate);
+                        }
+                    }
+
+                }
+            }
+
+            // adds the candidates that overlapped with vacation back to the stack
+            foreach (Candidate c in overlapped)
+            {
+                candidateStack.Push(c);
+            }
+        }
     }
 }
 
+// next step: was going to abstract out the part of going through the stack, and return only "attempted candidates"
+// so then it can go through next time with the same method, but do it in reverse... 
 
 
 
