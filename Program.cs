@@ -19,6 +19,5 @@ class Program
         Intern e = new Intern(1, "firstI", 4, 6);
         Intern f = new Intern(2, "secondI", 7, 9);
         Intern g = new Intern(3, "thirdI", 1, 3);
-        rM.AssignCandadites(new Intern[]{e, f, g});
     }
 }
